@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Daria, Daria Morgendorffer">
+    <title>This is Daria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+
+<div class="container">
+    <span class="brand"> (O) — (O) </span>
+    <header style="text-align: center;">
+        <h1 class="skew-right">It's DARIA</h1>
+        <p>"Behold the human race. It's a miracle we haven't accidentally set ourselves on fire yet."</p>
+    </header>
+
+    <nav>
+        <a href="#about me">About ME</a>
+        <a href="#updates">Latest Updates</a>
+        <a href="#photos">Photos</a>
+        <a href="#message">Message by Others</a>
+    </nav>
+
+    <div class="rollline">
+        <marquee scrollamount="10">THIS IS DARIA MORGENDORFFER. I'm not miserable. I'm just not bubbly...</marquee>
+    </div>
+
+    <section id ="about me">
+        <h2 class="skew-left">About ME</h2>
+          <div style="display: flex; align-items: flex-start; gap: 50px;">
+            <img src="https://i.pinimg.com/736x/93/39/1e/93391eb329d9af34621e39a626790b96.jpg" class="picture">
+            <div>
+              <p><strong>Name: </strong>Daria Morgendorffer</p>
+              <p><strong>Age: </strong>17<p>
+              <p><strong>Birthday: </strong>January 8th, 1982</p>
+              <p><strong>Education: </strong>High School</p>
+              <p><strong>Likes:</strong>reading, writing, sick sad world</p>
+              <p><strong>Friends:</strong>Jane Lane</p>
+              <p><strong>Self-Comment: </strong><br>I don't have low self-esteem.</br>It's everyone else I have a problem with.</p>
+            </div>
+          </div>
+    </section>
+
+    <section id="updates">
+        <h2 class="skew-left">Latest Updates</h2>
+        <div class="journal-entry">
+            <p><strong>March 3, 1999:</strong> School was a predictably soul-crushing experience. Kevin accidentally tied his shoelaces together and spent forty minutes convinced he had become a mermaid. Brittany asked if "The Great Gatsby" was a magician. I need a larger dose of pizza and a smaller dose of existence.</p>
+        </div>
+    </section>
+
+    <div class="quote-box" id="quoteDisplay">
+        "I don't have low self-esteem. It's everyone else I have a problem with."
+    </div>
+    <div style="text-align: center;">
+        <button onclick="newQuote()">Roll for Sarcasm</button>
+    </div>
+
+    <section id="photos">
+      <h2 class="skew-left">Photos</h2>
+    <img id="imagedisplay" class="pictures">
+    <div style="text-align: center;">
+      <button onclick="newImage()">NEXT</button>
+    </div>
+    </section>
+
+    <section id="message">
+        <h2 class="skew-left">Message By Others</h2>
+        <div class="journal-entry">
+        <ul>
+            <li>"You're not miserable. You're just not like them."  --Jane</li>
+            <li>"You use big words."  --Kevin </li>
+            <li>"You don't care what anyone thinks. <br> Well, I admit it's actually kind of… strong."  --Quinn<br></li>
+            <li>"You're scary when you're quiet."  --Brittany</li>
+        </ul>
+
+        <div class="dashed-box">
+         <P style="text-align: start;"><strong><mark>REPLY:</mark></strong><br>Whatever...</br></P>
+        </div>
+    </section>
+
+    <footer>
+        <p>Managed by Morgendorffer.</p>
+    </footer>
+</div>
+
+
+<script>
+    const quotes = [
+        "My goal is not to wake up at forty with the realization that I've wasted my life in a job I hate because I was forced to buy a bunch of stuff I didn’t need.",
+        "I'm not miserable. I'm just not bubbly.",
+        "There is no moment in life that can't be improved by pizza.",
+        "I've been direct, even abrasive, but I've never lied to you.",
+        "Don't worry, we have plenty of time to fail as adults.",
+        "If you can't say something nice, you're probably at my house."
+    ];
+
+    function newQuote() {
+        const rand = Math.floor(Math.random() * quotes.length);
+        document.getElementById('quoteDisplay').innerText = `"${quotes[rand]}"`;
+    }
+
+    function toggleTheme() {
+        const body = document.body;
+        const current = body.getAttribute('data-theme');
+        body.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+    }
+</script>
+
+<script>
+    const images = [
+            "https://i.pinimg.com/736x/52/38/8a/52388a6e69efc76cc84729b714096f7e.jpg",
+            "https://i.pinimg.com/736x/d3/45/13/d34513315856a6a57a43a22a78e74b5a.jpg",
+            "https://i.pinimg.com/736x/43/84/61/438461a10a43c8a1076c8a61650b4e81.jpg",
+            "https://i.pinimg.com/736x/ca/9d/39/ca9d399cf2029c3ea3fe024d78591baf.jpg"
+    ];
+
+    function newImage() {
+        const rand = Math.floor(Math.random() * images.length);
+        document.getElementById('imagedisplay').src = images[rand];
+    }
+
+    window.onload = function() {
+    newImage();
+};
+</script>
+
+</body>
+</html>
+
